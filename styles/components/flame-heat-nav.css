@@ -63,7 +63,7 @@
 }
 
 .category-btn.active::after {
-  width: 10px;
+  width: 30px;
 }
 
 /* Secondary Navigation Wrapper */
@@ -76,37 +76,54 @@
   display: block;
 }
 
+.secondary-nav-full-container {
+  padding: 1.25rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Secondary Navigation */
 .secondary-nav {
   display: none;
-  padding: 1.25rem 0;
   transition: all 0.3s ease;
+  flex: 1;
 }
 
 .secondary-nav.active {
   display: block;
 }
 
-.secondary-nav.flame-nav {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #E5E5E5;
-}
-
-.secondary-nav.heat-nav {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #E5E5E5;
-}
-
 .secondary-nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100%;
 }
 
 .secondary-nav-list {
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+.secondary-nav-search {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  flex-shrink: 0;
+}
+
+.secondary-nav-search i {
+  color: #222222;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.secondary-nav-search i:hover {
+  color: #B61F4A;
 }
 
 .secondary-nav-item {
@@ -204,82 +221,90 @@
   color: #B61F4A;
 }
 
-/* Option Content */
-.option-content {
-  display: none;
-}
-
-.option-content.active {
-  display: block;
-}
-
-/* Content Area */
-.content-area {
+/* Product Cards Section */
+.products-section {
   padding: 4rem 0;
-  text-align: center;
 }
 
-.content-area h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.content-area p {
-  font-size: 1.2rem;
-  color: #666;
-}
-
-/* Bottom Sticky Navigation */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #2d3748;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.bottom-nav-list {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  max-width: 1400px;
+.products-container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 }
 
-.bottom-nav-item {
-  flex: 1;
-  max-width: 300px;
+.product-card {
+  background: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.bottom-nav-link {
-  display: block;
-  text-align: center;
-  padding: 1.25rem 2rem;
-  color: #cbd5e0;
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.product-card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-content {
+  padding: 1.5rem;
+}
+
+.product-card-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #222222;
+}
+
+.product-card-content p {
+  margin: 0 0 1rem 0;
+  color: #6a6a6a;
+  font-size: 0.9rem;
+}
+
+.product-card-link {
+  display: inline-block;
+  color: #B61F4A;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  border-bottom: 3px solid transparent;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
-.bottom-nav-link:hover {
-  background-color: #4a5568;
-  color: white;
+.product-card-link:hover {
+  color: #222222;
 }
 
-.bottom-nav-link.active {
-  background-color: #4a5568;
-  color: white;
-  border-bottom-color: #B61F4A;
+/* Product Detail Section */
+.product-detail-section {
+  padding: 4rem 0;
+  min-height: 50vh;
 }
 
-/* Add padding to body to account for fixed bottom nav */
-body {
-  padding-bottom: 80px;
+.product-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.product-detail-container h1 {
+  font-size: 2.5rem;
+  color: #222222;
+  margin: 0;
 }
 
 /* Responsive Design */
@@ -290,6 +315,10 @@ body {
 
   .products-dropdown {
     min-width: 600px;
+  }
+
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -311,5 +340,9 @@ body {
   .secondary-nav-list {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .products-container {
+    grid-template-columns: 1fr;
   }
 }

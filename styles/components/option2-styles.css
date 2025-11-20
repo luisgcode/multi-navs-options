@@ -1,0 +1,61 @@
+/* ========================================
+   OPTION 2: CLICK TO LOCK - CENTERED BUTTONS
+   ======================================== */
+
+.opt2-header {
+  background-color: white;
+  padding: 2rem 0;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.opt2-logo {
+  height: 40px;
+}
+
+.opt2-category-section {
+  background-color: #f8f8f8;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.opt2-category-btn {
+  background-color: white;
+  border: 3px solid #e5e5e5;
+  color: #222222;
+  padding: 2rem 5rem;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.opt2-category-btn:hover {
+  border-color: #b61f4a;
+  color: #b61f4a;
+  transform: scale(1.05);
+}
+
+.opt2-category-btn.active {
+  background-color: #b61f4a;
+  border-color: #b61f4a;
+  color: white;
+  box-shadow: 0 8px 20px rgba(182, 31, 74, 0.3);
+}
+
+.opt2-secondary-nav {
+  display: none;
+  padding: 1.5rem 0;
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.opt2-secondary-nav.active {
+  display: block;
+}
